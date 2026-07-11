@@ -19,14 +19,14 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://tube2blog.com"),
   title: {
     template: "%s - Tube2Blog",
-    default: "YouTube to Blog Post Converter - Turn Videos into SEO Content | Tube2Blog",
+    default: "YouTube to Blog Post Converter - Turn Videos into SEO Content - Tube2Blog",
   },
   description:
     "Turn YouTube videos into SEO-optimized blog posts in 30 seconds. Extract transcripts, generate metadata, and export clean Markdown. Double your content output from every video — free, no sign-up required.",
   openGraph: {
     type: "website",
     siteName: "Tube2Blog",
-    title: "YouTube to Blog Post Converter | Tube2Blog",
+    title: "YouTube to Blog Post Converter - Tube2Blog",
     description:
       "Free YouTube to blog converter: paste any YouTube URL and get an AI-written SEO blog post in seconds. Extract transcripts, generate metadata, export Markdown.",
     images: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "YouTube to Blog Post Converter | Tube2Blog",
+    title: "YouTube to Blog Post Converter - Tube2Blog",
     description:
       "Free YouTube to blog converter: paste any YouTube URL and get an AI-written SEO blog post in seconds.",
   },
