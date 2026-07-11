@@ -6,11 +6,12 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { JsonLd } from "@/components/json-ld";
 import { HomeTool } from "./home-tool";
 import { Sparkles, Search, FileText, Zap, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "YouTube to SEO Blog Post Generator",
+  title: "Tube2Blog - From YouTuber to Automated Blogger in Seconds",
   description:
     "Turn YouTube videos into SEO-optimized blog posts in 30 seconds. Extract transcripts, generate metadata, and export clean Markdown. Double your content output from every video — free, no sign-up required.",
   keywords: [
@@ -37,6 +38,53 @@ export const metadata: Metadata = {
   },
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How does the YouTube to Blog tool work?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Paste a YouTube URL, and we extract the transcript, generate SEO metadata, pull video thumbnails, and present everything in an editable Markdown editor. You can then copy or publish the result.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is this YouTube to Blog converter free?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, the free tier supports video transcription up to 10 minutes. A Pro plan with AI rewriting and unlimited length is available.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do I need an API key?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. The free tier works without any API keys — just paste a YouTube URL and start editing.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How is this different from manual transcription?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Our tool automates the entire process: transcript extraction, SEO metadata generation, thumbnail selection, and Schema markup — saving hours per article.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I export to WordPress or Medium?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, you can copy the generated Markdown directly and paste into any CMS. One-click publishing is coming soon.",
+      },
+    },
+  ],
+};
+
 const highlights = [
   { icon: Sparkles, text: "AI extracts transcript & generates SEO blog post" },
   { icon: Search, text: "Proper headings, meta descriptions, and Schema markup" },
@@ -47,6 +95,7 @@ const highlights = [
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-full">
+      <JsonLd data={faqSchema} />
       <Header />
       <main className="flex-1">
         <section className="mx-auto max-w-3xl px-4 pt-20 pb-16">

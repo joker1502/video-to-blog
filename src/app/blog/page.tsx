@@ -7,7 +7,13 @@ import { getAllPosts, formatTag } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Tips, guides, and updates for turning video content into SEO blog posts.",
+  description: "Learn how to repurpose video content into SEO-optimized blog posts.",
+  keywords: [
+    "youtube video to blog post",
+    "video to blog post generator",
+    "youtube transcript to blog post",
+    "youtube to blog converter",
+  ],
 };
 
 export default function BlogPage() {

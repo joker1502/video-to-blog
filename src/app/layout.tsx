@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import "./globals.css";
@@ -15,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "https://tube2blog.com"),
+  metadataBase: new URL("https://tube2blog.com"),
   title: {
     template: "%s - Tube2Blog",
     default: "Tube2Blog - From YouTuber to Automated Blogger in Seconds",
@@ -45,6 +46,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.png", sizes: "96x96", type: "image/png" },
       { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
       { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
     ],
@@ -71,6 +73,18 @@ export default function RootLayout({
             {children}
           </ThemeProvider>
         </TooltipProvider>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-6CC8HV421L"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-6CC8HV421L');
+          `}
+        </Script>
       </body>
     </html>
   );
